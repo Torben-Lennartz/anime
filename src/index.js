@@ -1272,7 +1272,7 @@ function timeline(params = {}) {
 anime.version = '3.2.1';
 anime.speed = 1;
 // TODO:#review: naming, documentation
-anime.suspendWhenDocumentHidden = false;
+anime.suspendWhenDocumentHidden = true;
 anime.running = activeInstances;
 anime.remove = removeTargetsFromActiveInstances;
 anime.get = getOriginalTargetValue;
