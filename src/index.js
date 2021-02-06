@@ -847,7 +847,7 @@ const engine = (() => {
   let raf;
 
   function play() {
-    if (!raf && (!isDocumentHidden() || !anime.suspendWhenDocumentHidden) && activeInstances.length > 0) {
+    if (!raf && (!isDocumentHidden() || !anime.suspendWhenDocumentHidden) && activeInstances.length > 0 ) {
       raf = requestAnimationFrame(step);
     }
   }
@@ -1272,7 +1272,7 @@ function timeline(params = {}) {
 anime.version = '3.2.1';
 anime.speed = 1;
 // TODO:#review: naming, documentation
-anime.suspendWhenDocumentHidden = true;
+anime.suspendWhenDocumentHidden = false;
 anime.running = activeInstances;
 anime.remove = removeTargetsFromActiveInstances;
 anime.get = getOriginalTargetValue;
@@ -1285,5 +1285,7 @@ anime.timeline = timeline;
 anime.easing = parseEasings;
 anime.penner = penner;
 anime.random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+anime.ifHiddenContinueRendering = true;
 
 export default anime;
